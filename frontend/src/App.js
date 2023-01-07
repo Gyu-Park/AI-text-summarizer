@@ -41,13 +41,15 @@ function App() {
   }
 
   return (
-    <div>
-      <form>
-        <input onChange={(e) => handleText(e)} id="text" value={text} placeholder="enter texts to summarize" type="text"></input>
-        <button onClick={(e) => submit(e)}>Submit</button>
+    <div style={{"text-align": "center", "margin-top": "10vh"}}>
+      <form style={{"display": "grid", "justify-items": "center"}}>
+        <textarea onChange={(e) => handleText(e)} id="text" value={text} placeholder="enter texts to summarize" type="textarea" 
+          style={{"width": "40vw", "height": "30vh"}}></textarea>
+        <button onClick={(e) => submit(e)} style={{"width": "5vw", "height": "2vh", "margin-top": "1rem"}}>Submit</button>
       </form>
-      <div>
-        <p>summary: {summarizedText.data}</p>
+      <div style={{"margin": "1rem 30vw", "display": "grid", "justify-items": "center", "border": "2px solid", "border-color": "black", "padding": "30px"}}>
+        <h3>summary</h3>
+        <p style={{"width": "30vw", "height": "30vh"}}>{summarizedText.data}</p>
       </div>
     </div>
   );
